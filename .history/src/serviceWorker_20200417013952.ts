@@ -134,7 +134,7 @@ function checkValidServiceWorker(swUrl: string, config?: Config): void {
     });
 }
 
-export function unregister(): void {
+export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
       .then(registration => {

@@ -64,12 +64,12 @@ function registerValidSW(swUrl: string, config?: Config): void {
     .register(swUrl)
     .then(registration => {
       // eslint-disable-next-line no-param-reassign
-      registration.onupdatefound = (): void => {
+      registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
           return;
         }
-        installingWorker.onstatechange = (): void => {
+        installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
               // At this point, the updated precached content has been fetched,
@@ -104,7 +104,7 @@ function registerValidSW(swUrl: string, config?: Config): void {
     });
 }
 
-function checkValidServiceWorker(swUrl: string, config?: Config): void {
+function checkValidServiceWorker(swUrl: string, config?: Config) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
     headers: { 'Service-Worker': 'script' },
@@ -134,7 +134,7 @@ function checkValidServiceWorker(swUrl: string, config?: Config): void {
     });
 }
 
-export function unregister(): void {
+export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
       .then(registration => {

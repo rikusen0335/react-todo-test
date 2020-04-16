@@ -1,9 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TodoComponent from './TodoComponent';
 
-const App: React.FC = () => {
+function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,10 +18,9 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
-        <TodoComponent />
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
